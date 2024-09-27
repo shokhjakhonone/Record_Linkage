@@ -1,0 +1,166 @@
+/* Basic Reset and Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("https://static.scientificamerican.com/sciam/cache/file/CC18186D-F81E-4488-A2B6044079D1ED94_source.gif?w=900");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    color: #ffffff; /* White text color for contrast */
+      margin: 50px;
+  padding: 50px;
+
+}
+
+/* Container to center content and give it a card-like appearance */
+.container {
+    width: 90%; /* Adjusted to 90% for better responsiveness */
+    max-width: 1200px; /* Maximum width to prevent stretching on large screens */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    background: #2a2a2a; /* Darker background for the card */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Header styles */
+h1 {
+    text-align: center;
+    color: #ffffff; /* White color for better contrast */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Visualization section styles */
+h2 {
+    text-align: center;
+    margin-top: 40px; /* Space above the visualizations */
+    color: #ffffff; /* White color for better contrast */
+}
+
+h3 {
+    text-align: center;
+    color: #e0e0e0; /* Lighter grey for subheadings */
+}
+
+/* Image and iframe styles */
+img {
+    display: block;
+    margin: 0 auto; /* Center the image */
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+iframe {
+    display: block;
+    margin: 100px auto; /* Center the iframe */
+    border: none; /* Remove default border */
+    width: 100%; /* Full width for responsiveness */
+    height: 500px; /* Fixed height for the iframe */
+    border-radius: 8px; /* Rounded corners for iframes */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+/* Label styling */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold; /* Bold labels for better visibility */
+    color: #e0e0e0; /* Lighter grey for labels */
+}
+
+/* File input styling */
+input[type="file"] {
+    margin: 10px 0 20px;
+    border: 1px solid #444; /* Darker border for file input */
+    padding: 8px; /* Padding inside the input */
+    border-radius: 4px; /* Slightly rounded corners */
+    width: 100%; /* Full width for responsiveness */
+    background: #333; /* Dark background for input */
+    color: #ffffff; /* White text color in input */
+}
+
+/* Button styling */
+button, .button {
+    display: block;
+    width: 100%;
+    padding: 12px; /* Slightly larger padding for better touch targets */
+    background: #0078d4; /* Primary button color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Legible font size */
+    text-align: center; /* Center text in the button */
+    text-decoration: none; /* Remove underline from links */
+    margin-top: 10px; /* Space above the button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Download button styling */
+.download-button {
+    display: inline-block; /* Make the link a block element */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size */
+    color: white; /* Text color */
+    background-color: #007BFF; /* Button background color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center text */
+}
+
+.download-button:hover {
+    background-color: #0056b3; /* Background color on hover */
+}
+
+/* Button hover effect */
+.button:hover, button:hover {
+    background: #005ea6; /* Darker shade on hover */
+}
+
+/* Specific styling for back button */
+.back-button {
+    background: #f44336; /* Different color for back button */
+}
+
+/* Back button hover effect */
+.back-button:hover {
+    background: #c62828; /* Darker shade on hover for back button */
+}
+
+/* Table container styling */
+.table-container {
+    margin-top: 20px;
+}
+
+/* Dataframe table styling */
+.dataframe {
+    width: 100%;
+    border-collapse: collapse; /* Remove space between borders */
+}
+
+/* Table cell styling */
+.dataframe th, .dataframe td {
+    border: 1px solid #444; /* Darker border for cells */
+    padding: 10px; /* Increased padding for better readability */
+    text-align: left; /* Align text to the left */
+}
+
+/* Header cell styling */
+.dataframe th {
+    background-color: #3a3a3a; /* Dark grey for header */
+    color: #ffffff; /* White color for header text */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+
+    button, .button {
+        font-size: 14px; /* Smaller font size for buttons */
+    }
+
+    .dataframe th, .dataframe td {
+        padding: 8px; /* Smaller padding for table cells */
+    }
+}

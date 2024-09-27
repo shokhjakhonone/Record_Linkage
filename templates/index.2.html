@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Record Linkage</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Загрузка данных о клиентах</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file1">Загрузите набор данных 1 (CSV):</label>
+            <input type="file" name="file1" accept=".csv" required>
+            <br>
+            <label for="file2">Загрузите набор данных 2 (CSV):</label>
+            <input type="file" name="file2" accept=".csv" required>
+            <br>
+            <button type="submit">начать</button>
+        </form>
+    </div>
+</body>
+</html>

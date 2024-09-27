@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f6fa;
+            color: #2f3640;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #273c75;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 20px 0 10px 0;
+        }
+
+        .visualization, .table-container {
+            margin-bottom: 30px;
+        }
+
+        /* Кнопка загрузки CSV */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 1.1em;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e3033b;
+        }
+        
+        
+              .back-btn {
+
+            display: inline-block;
+
+            padding: 5px 10px;
+
+            background-color: #007bff; /* Blue color for back button */
+
+            color: white;
+
+            font-size: 1em;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            text-align: center;
+
+            transition: background-color 0.3s;
+
+            margin-top: 6px; /* Space above the button */
+
+        }
+
+
+        .back-btn:hover {
+
+            background-color: #0056b3; /* Darker blue on hover */
+
+        }
+        
+
+        /* Стили для таблицы */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #dcdde1;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #273c75;
+            color: white;
+        }
+
+        td {
+            background-color: #f0f2f5;
+        }
+
+        /* Стили для визуализаций */
+        iframe {
+            width: 500px; /* Ширина диаграмм */
+            height: 400px; /* Высота диаграмм */
+            border: none; /* Убираем рамку */
+            border: 1px solid #dcdde1;
+        }
+
+        /* Стили карточек */
+        .card {
+            background-color: #f5f6fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-size: 1.5em;
+            color: #192a56;
+            margin-bottom: 10px;
+        }
+
+        .card img {
+            width: 500px; /* Ширина диаграмм */
+            height: 400px; /* Высота диаграмм */
+            border: none; /* Убираем рамку */
+            border: 1px solid #dcdde1;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #273c75;
+            color: white;
+            margin-top: 40px;
+            border-radius: 0 0 10px 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+   <div>
+     <a href="{{ url_for('index') }}" class="back-btn">Назад</a>
+</div>
+    <h1>Результаты сопоставления данных</h1>
+  
+    <!-- Отображение таблицы с результатами -->
+    <div class="table-container">
+        <h2>Сопоставленные записи</h2>
+        {% for table in tables %}
+            {{ table|safe }}
+        {% endfor %}
+    </div>
+
+   
+
+    <!-- Визуализация с Plotly -->
+    <div class="card">
+        <h2 class="card-title">Визуализации сопоставления данных </h2>
+        <iframe src="{{ url_for('static', filename='plotly_histogram.html') }}"></iframe>
+        <iframe src="{{ url_for('static', filename='plotly_bar.html') }}"></iframe>
+        <iframe src="{{ url_for('static', filename='plotly_scatter.html') }}"></iframe>
+         <img src="{{ url_for('static', filename='seaborn_plot.png') }}" alt="Seaborn Visualization">
+    </div>
+
+    <!-- Ссылка на скачивание CSV -->
+    <div class="card">
+        <a href="{{ url_for('download_file', filename=download_link) }}" class="btn">Скачать объединенный CSV</a>
+    </div>
+     
+</div>
+
+<footer>
+    &copy; 2024 UZlegalAI - Tuhtamirzaev Shokhjakhon.
+</footer>
+
+</body>
+</html>
